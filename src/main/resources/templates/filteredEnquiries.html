@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>Ashok IT - View Enquries</title>
+<!-- MDB icon -->
+<link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+<!-- Google Fonts Roboto -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+<!-- MDB -->
+<link rel="stylesheet" href="css/bootstrap-login-form.min.css" />
+
+<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+	<table class="table table-striped table-bordered table-hover"
+		id="enqTbl">
+
+		<thead>
+			<tr>
+				<th scope="col">StudentId</th>
+				<th scope="col">StudentName</th>
+				<th scope="col">PhoneNumber</th>
+				<th scope="col">Mode</th>
+				<th scope="col">CourseName</th>
+				<th scope="col">CreatedDate</th>
+				<th scope="col">Status</th>
+				<th scope="col">Action</th>
+
+			</tr>
+		</thead>
+		<tbody id="table-body">
+			<tr th:each="enquiries : ${details}">
+				<td th:text="${enquiries.enquiryId}"></td>
+				<td th:text="${enquiries.studentName}"></td>
+				<td th:text="${enquiries.contactNumber}"></td>
+				<td th:text="${enquiries.classMode}"></td>
+				<td th:text="${enquiries.course}"></td>
+				<td th:text="${enquiries.createdDate}"></td>
+				<td th:text="${enquiries.status}"></td>
+				<td><a th:href="@{update?/(enquiryId=${enquiries.enquiryId})}"
+					class="btn btn-info">UPDATE</a></td>
+
+
+
+
+			</tr>
+
+		</tbody>
+	</table>
+
+
+
+
+	<!-- End your project here-->
+
+	<!-- MDB -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<!-- Custom scripts -->
+	<script type="text/javascript"></script>
+</body>
+
+</html>
